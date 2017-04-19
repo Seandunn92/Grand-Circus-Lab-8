@@ -1,10 +1,14 @@
 /**
  * Created by seandunn92 on 4/18/17.
  */
+import java.text.DecimalFormatSymbols;
 import java.util.Arrays;
+import java.text.DecimalFormat;
+
 public class Batter {
     private int[] batterResults;
     private int batterNumber;
+
 
     public Batter(){
         batterResults = new int[]{};
@@ -48,7 +52,9 @@ public class Batter {
         return numToDivideInto/ batterResults.length;
     }
     public String toString(){
-        return "Batter " + batterNumber + " average: " +getBattingAverage() + "       slugging percentage: " + getSluggingPercentage();
+        DecimalFormat df = new DecimalFormat("#.###");
+        return "Batter " + batterNumber + " average: " +df.format(getBattingAverage()) + "       slugging percentage: "
+                + df.format(getSluggingPercentage());
     }
 
 }
