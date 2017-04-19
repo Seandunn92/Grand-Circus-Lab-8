@@ -9,6 +9,7 @@ public class Lab8Driver {
 
     public static void main(String[] args) {
 
+
         int numBats = getNumBats();
 
         Batter[] batterArray = new Batter[numBats];
@@ -25,6 +26,7 @@ public class Lab8Driver {
 
     }
 
+    //getNumBats isn't passed any input, and prompts the user until they enter a vaild integer, then returns that integer
     private static int getNumBats() {
         int numBats=-1;
 
@@ -44,6 +46,10 @@ public class Lab8Driver {
     }
 
 
+    /*
+        setBatterArray takes in an array of Batters, and uses getBatterData for each part of the Batter Array to assign
+        ther proper values
+     */
     private static void setBatterArray(Batter[] batterArray) {
         for (int i=0; i<batterArray.length; i++){
             batterArray[i] =getBatterData(batterArray[i]);
@@ -51,8 +57,11 @@ public class Lab8Driver {
         }
     }
 
+    /*
+        getBatterData takes in a Batter, and loops through user Information to set the Batter Data
+     */
     private static Batter getBatterData(Batter batter) {
-       // batter.setBatterNumber(batterNumber);// start by setting the batterNumber
+
         int numTimesAtBat = getNumTimesAtBat();
 
         //this variable is equal to 0,1,2,3,4 depending on how the batter did at the bat this round
@@ -82,6 +91,10 @@ public class Lab8Driver {
         return batter;
     }
 
+    /*
+    When looking at a batter, we need to now how many times that batter will bat. getNumTimesAtBat() prompts user until a
+    valid integer input is given, then returns that integer
+     */
     private static int getNumTimesAtBat() {
         int numTimesAtBat =-1;
         while(numTimesAtBat <0){
